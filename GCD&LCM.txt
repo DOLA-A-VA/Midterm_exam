@@ -1,0 +1,22 @@
+package ex;
+import java.util.*;
+public class ex1 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int m = sc.nextInt();
+		int n = sc.nextInt();
+		s("" + GCD(m , n));
+		int LCM = (m / GCD(m , n)) * (n / GCD(m , n)) * GCD(m , n);
+		s("\n" + LCM);
+	}
+	static void s(String s) {
+		System.out.print(s);
+	}
+	static int GCD( int m , int n) {
+		if(m == 0) return n;
+		if(n == 0) return m;
+		if(m > n) return(GCD(m-n , n));
+		return(GCD(n-m , m));
+	}
+}
